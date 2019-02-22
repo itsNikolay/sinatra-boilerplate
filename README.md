@@ -25,6 +25,12 @@ bin/rake db:create_migration NAME=create_users
 bin/rake db:migrate
 ```
 
+## Run Docker
+
+```sh
+bin/docker_cmd
+```
+
 ## License
 
 The MIT License (MIT)

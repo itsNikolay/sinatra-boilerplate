@@ -5,6 +5,7 @@ require_relative 'config/boot'
 # Application
 class App < Sinatra::Base
   register Sinatra::Contrib
+  set :logging, true
 
   get '/' do
     send_file File.expand_path('index.html', settings.public_folder)

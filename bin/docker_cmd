@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+def prompt(*args)
+  print(*args)
+  gets
+end
+
+def run(cmd)
+  puts cmd
+  system cmd
+end
+
+# change it
+DOCKER_REPO = 'itsnikolay/sinatra-boilerplate:latest'.freeze
+
+do_push = prompt "Push to \"#{DOCKER_REPO}\" ? (y/n)"
+do_run  = prompt "Run container ? (y/n)"
+
+Dir.chdir(File.dirname(__FILE__) + '/..') do
+  run "docker build -f Dockerfile -t #{DOCKER_REPO} ."
+
+  run "docker push #{DOCKER_REPO}" if do_push.match?(/y/)
+
+  run "docker run -d -p 9292:9292 #{DOCKER_REPO}" if do_run.match?(/y/)
+end
