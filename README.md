@@ -10,6 +10,8 @@ bin/setup
 
 ```bash
 bin/rake
+# or
+docker-compose exec app bin/rake
 ```
 
 ## Run server
@@ -23,6 +25,8 @@ bin/rake s
 ```bash
 bin/rake db:create_migration NAME=create_users
 bin/rake db:migrate
+# or
+docker-compose exec app bin/rake db:migrate
 ```
 
 ## Run Docker
