@@ -9,5 +9,7 @@ set -e
 command -v bundle || gem install bundler --conservative
 bundle check || bundle install
 
+cp .env.example .env
+
 # Set up database
 bin/rake db:setup

@@ -4,6 +4,8 @@
 
 ```bash
 bin/setup
+# or
+cp .env.example .env
 ```
 
 ## Run tests
