@@ -12,6 +12,11 @@ class App < Sinatra::Base
     send_file File.expand_path('index.html', settings.public_folder)
   end
 
+  get '/worker' do
+    ImportedWorker.create! name: 'John', email: 'john@example.com'
+    json ImportedWorker.last.as_json
+  end
+
   get 'internal_resourcing/import_workers/csv' do
     json 'hello'
   end
