@@ -2,17 +2,30 @@
 
 require_relative 'config/boot'
 
-# Application
+# Main Application
 class App < Sinatra::Base
   register Sinatra::Contrib
+
   set :logging, true
 
   get '/' do
     send_file File.expand_path('index.html', settings.public_folder)
   end
 
-  get '/hello.json' do
-    json HelloWorldService.json
+  get 'internal_resourcing/import_workers/csv' do
+    json 'hello'
+  end
+
+  post 'internal_resourcing/invite_worker' do
+    json 'hello'
+  end
+
+  get 'internal_resourcing/imported_workers' do
+    json 'hello'
+  end
+
+  delete 'imported_workers/:imported_worker_id' do
+    json 'hello'
   end
 
   not_found do

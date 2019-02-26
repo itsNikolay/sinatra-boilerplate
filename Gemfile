@@ -8,7 +8,7 @@ gem 'puma'
 gem 'rake',            require: false
 gem 'sinatra',         require: 'sinatra/base'
 gem 'sinatra-activerecord'
-gem 'sinatra-contrib', require: false
+gem 'sinatra-contrib'
 
 group :development, :test do
   gem 'pry',        require: false
@@ -17,6 +17,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'database_cleaner', require: false
   gem 'rack-test'
   gem 'rspec'
 end

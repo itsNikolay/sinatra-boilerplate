@@ -3,6 +3,9 @@
 require_relative 'spec_helper'
 
 describe 'My Sinatra Application' do
+
+  before { DatabaseCleaner.clean }
+
   it 'gets the home page' do
     get '/'
 
