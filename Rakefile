@@ -25,3 +25,8 @@ desc 'Rubocop'
 task :r do
   system 'bin/rubocop -P'
 end
+
+desc 'Rubocop fix'
+task :fix do
+  system 'bin/rubocop -a'
+end

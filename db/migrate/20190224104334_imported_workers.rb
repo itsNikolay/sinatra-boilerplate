@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# create imported workers table
 class ImportedWorkers < ActiveRecord::Migration[5.2]
   def change
     create_table :imported_workers do |t|
